@@ -19,6 +19,7 @@
 ![img_01.png](img_01.png)
 
 ## Linear regression
+
 ---
 
 * Minimize over θ<sub>0</sub>θ<sub>1</sub> -- 1/**2m** that causes [2](2) to be minimized
