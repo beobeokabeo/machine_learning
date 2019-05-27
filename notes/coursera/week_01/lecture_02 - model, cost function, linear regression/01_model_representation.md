@@ -28,7 +28,7 @@ When the target variable that we’re trying to predict is continuous, such as i
 2. Regression Problem
     - predict real-valued output
 
-![img_02.png](img_02.png)
+![img_02.jpg](img_02.jpg)
 
 ## Parameters:
 -----
@@ -39,7 +39,7 @@ When the target variable that we’re trying to predict is continuous, such as i
 - outputs - **y** - price in **$**
 - mapping function/hypothesis - **h**
 
-![img_00.png](img_00.png)
+![img_00.jpg](img_00.jpg)
 
 - Learning algorithm
     - function h (Hypothesis)
@@ -50,4 +50,4 @@ When the target variable that we’re trying to predict is continuous, such as i
 
 - How to represent h?
 
-![img_03.png](img_03.png)
+![img_03.jpg](img_03.jpg)

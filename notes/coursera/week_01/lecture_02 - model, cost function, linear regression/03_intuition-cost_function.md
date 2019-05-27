@@ -13,7 +13,7 @@ And I have only one parameter **θ<sub>1</sub>** and so my optimization objectiv
 
 In pictures, what this means is that if theta **θ<sub>1</sub>** that corresponds to choosing only hypothesis functions that pass through the origin, that pass through the point **(0, 0)**. 
 
-![inuition_01.png](inuition_01.png)
+![intuition_01.jpg](intuition_01.jpg)
 
 
 Using this simplified definition of a hypothesizing cost function, let's try to understand the cost function concept better. 
@@ -26,7 +26,7 @@ Two key functions we want to understand:
 
 ## Simplified functions
 ---
-![intuition_02.png](intuition_02.png)
+![intuition_02.jpg](intuition_02.jpg)
 
 ### Hypothesis
 
@@ -60,6 +60,9 @@ Now know that **J(<sub>1</sub>)=0** let's plot it.
 
 ---
 
-Cost function **J** is plotted on the right. Because cost function is a function of my parameter theta one **J(θ<sub>1</sub>)**, the horizontal axis is now labeled with **θ<sub>1</sub>**. 
+* Cost function **J** is plotted on the right. 
+*  cost function is a function of my parameter theta one **J(θ<sub>1</sub>)**, the horizontal axis is now labeled with **θ<sub>1</sub>**. 
 
-I have J(0,1) of that's plotted. Now lets look at some other examples. Theta-1 can take on a range of different values. Right? So theta-1 can take on the negative values, zero, positive values. So what if theta-1 is equal to 0.5. What happens then? Let's go ahead and plot that. 
+I have J(0,1) that's plotted. 
+
+Now lets look at some other examples. Theta-1 can take on a range of different values. Right? So theta-1 can take on the negative values, zero, positive values. So what if theta-1 is equal to 0.5. What happens then? Let's go ahead and plot that.
