@@ -68,5 +68,3 @@ var temp1 = theta[1] - gradient_descent(alpha, (partial_derivative / (partial_de
 theta_zero = temp0;
 theta_one = temp1;
 ```
-
-
