@@ -1,0 +1,771 @@
+>> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> B = [11 12; 13 14; 15 16]
+B =
+
+   11   12
+   13   14
+   15   16
+
+>> v = [1;2;3]
+v =
+
+   1
+   2
+   3
+
+>> 1 ./ v
+ans =
+
+   1.00000
+   0.50000
+   0.33333
+
+>> 1 ./ A
+ans =
+
+   1.00000   0.50000
+   0.33333   0.25000
+   0.20000   0.16667
+
+>> log(v)
+ans =
+
+   0.00000
+   0.69315
+   1.09861
+
+>> log(A)
+ans =
+
+   0.00000   0.69315
+   1.09861   1.38629
+   1.60944   1.79176
+
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> log(8)
+ans =  2.0794
+>> log(21)
+ans =  3.0445
+>> log(22/7)
+ans =  1.1451
+>> -v
+ans =
+
+  -1
+  -2
+  -3
+
+>> -1 *v
+ans =
+
+  -1
+  -2
+  -3
+
+>> v + ones(length(v), 1)
+ans =
+
+   2
+   3
+   4
+
+>> v
+v =
+
+   1
+   2
+   3
+
+>> length(v)
+ans =  3
+>> ones(3,1)
+ans =
+
+   1
+   1
+   1
+
+>> v+1
+ans =
+
+   2
+   3
+   4
+
+>> v
+v =
+
+   1
+   2
+   3
+
+>> v+1
+ans =
+
+   2
+   3
+   4
+
+>> v
+v =
+
+   1
+   2
+   3
+
+>> v++
+ans =
+
+   1
+   2
+   3
+
+>> v
+v =
+
+   2
+   3
+   4
+
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> A'
+ans =
+
+   1   3   5
+   2   4   6
+
+>> (A')'
+ans =
+
+   1   2
+   3   4
+   5   6
+
+>> eye(9)
+ans =
+
+Diagonal Matrix
+
+   1   0   0   0   0   0   0   0   0
+   0   1   0   0   0   0   0   0   0
+   0   0   1   0   0   0   0   0   0
+   0   0   0   1   0   0   0   0   0
+   0   0   0   0   1   0   0   0   0
+   0   0   0   0   0   1   0   0   0
+   0   0   0   0   0   0   1   0   0
+   0   0   0   0   0   0   0   1   0
+   0   0   0   0   0   0   0   0   1
+
+>> magic(9)
+ans =
+
+   47   58   69   80    1   12   23   34   45
+   57   68   79    9   11   22   33   44   46
+   67   78    8   10   21   32   43   54   56
+   77    7   18   20   31   42   53   55   66
+    6   17   19   30   41   52   63   65   76
+   16   27   29   40   51   62   64   75    5
+   26   28   39   50   61   72   74    4   15
+   36   38   49   60   71   73    3   14   25
+   37   48   59   70   81    2   13   24   35
+
+>> a = [1 15 2 0.5]
+a =
+
+    1.00000   15.00000    2.00000    0.50000
+
+>> max(a)
+ans =  15
+>> [val, ind] = max(a)
+val =  15
+ind =  2
+>> max(A)
+ans =
+
+   5   6
+
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> a < 3
+ans =
+
+  1  0  1  1
+
+>> A < 5
+ans =
+
+  1  1
+  1  1
+  0  0
+
+>>
+>> code .
+error: 'code' undefined near line 1 column 1
+>> [r, c] = find(A>=3)
+r =
+
+   2
+   3
+   2
+   3
+
+c =
+
+   1
+   1
+   2
+   2
+
+>> help find
+'find' is a built-in function from the file libinterp/corefcn/find.cc
+
+ -- IDX = find (X)
+ -- IDX = find (X, N)
+ -- IDX = find (X, N, DIRECTION)
+ -- [i, j] = find (...)
+ -- [i, j, v] = find (...)
+     Return a vector of indices of nonzero elements of a matrix, as a
+     row if X is a row vector or as a column otherwise.
+
+     To obtain a single index for each matrix element, Octave pretends
+     that the columns of a matrix form one long vector (like Fortran
+     arrays are stored).  For example:
+
+          find (eye (2))
+            => [ 1; 4 ]
+
+     If two inputs are given, N indicates the maximum number of elements
+     to find from the beginning of the matrix or vector.
+
+     If three inputs are given, DIRECTION should be one of "first" or
+     "last", requesting only the first or last N indices, respectively.
+     However, the indices are always returned in ascending order.
+
+     If two outputs are requested, 'find' returns the row and column
+     indices of nonzero elements of a matrix.  For example:
+
+          [i, j] = find (2 * eye (2))
+              => i = [ 1; 2 ]
+              => j = [ 1; 2 ]
+
+     If three outputs are requested, 'find' also returns a vector
+     containing the nonzero values.  For example:
+
+          [i, j, v] = find (3 * eye (2))
+                 => i = [ 1; 2 ]
+                 => j = [ 1; 2 ]
+                 => v = [ 3; 3 ]
+
+     Note that this function is particularly useful for sparse matrices,
+     as it extracts the nonzero elements as vectors, which can then be
+     used to create the original matrix.  For example:
+
+          sz = size (a);
+          [i, j, v] = find (a);
+          b = sparse (i, j, v, sz(1), sz(2));
+
+     See also: nonzeros.
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at https://www.octave.org and via the help@octave.org
+mailing list.
+>> a
+a =
+
+    1.00000   15.00000    2.00000    0.50000
+
+>> sum(a)
+ans =  18.500
+>>
+
+
+>> t=[0:0.01:0.98];
+>> t
+t =
+
+ Columns 1 through 12:
+
+   0.00000   0.01000   0.02000   0.03000   0.04000   0.05000   0.06000   0.07000   0.08000   0.09000   0.10000   0.11000
+
+ Columns 13 through 24:
+
+   0.12000   0.13000   0.14000   0.15000   0.16000   0.17000   0.18000   0.19000   0.20000   0.21000   0.22000   0.23000
+
+ Columns 25 through 36:
+
+   0.24000   0.25000   0.26000   0.27000   0.28000   0.29000   0.30000   0.31000   0.32000   0.33000   0.34000   0.35000
+
+ Columns 37 through 48:
+
+   0.36000   0.37000   0.38000   0.39000   0.40000   0.41000   0.42000   0.43000   0.44000   0.45000   0.46000   0.47000
+
+ Columns 49 through 60:
+
+   0.48000   0.49000   0.50000   0.51000   0.52000   0.53000   0.54000   0.55000   0.56000   0.57000   0.58000   0.59000
+
+ Columns 61 through 72:
+
+   0.60000   0.61000   0.62000   0.63000   0.64000   0.65000   0.66000   0.67000   0.68000   0.69000   0.70000   0.71000
+
+ Columns 73 through 84:
+
+   0.72000   0.73000   0.74000   0.75000   0.76000   0.77000   0.78000   0.79000   0.80000   0.81000   0.82000   0.83000
+
+ Columns 85 through 96:
+
+   0.84000   0.85000   0.86000   0.87000   0.88000   0.89000   0.90000   0.91000   0.92000   0.93000   0.94000   0.95000
+
+ Columns 97 through 99:
+
+   0.96000   0.97000   0.98000
+
+>> y1=sin(2*pi*4*t);
+>> plot(t, y1)
+>> y2=cos(2*pi*4*t);
+>> plot(t, y2)
+>> plot(t, y1)
+>> plot(t, y1, y2)
+>> plot(y1, y2)
+>> plot(t, y1)
+>> hold on;
+>> plot (t, y2,'r');
+>> xlabel('time');
+>> ylabel('value');
+>> legend('sin', 'cos');
+>> title('my plot');
+>> print -dpng 'myPlot.png'
+>> y1 = y1'
+y1 =
+
+   0.00000
+   0.24869
+   0.48175
+   0.68455
+   0.84433
+   0.95106
+   0.99803
+   0.98229
+   0.90483
+   0.77051
+   0.58779
+   0.36812
+   0.12533
+  -0.12533
+  -0.36812
+  -0.58779
+  -0.77051
+  -0.90483
+  -0.98229
+  -0.99803
+  -0.95106
+  -0.84433
+  -0.68455
+  -0.48175
+  -0.24869
+  -0.00000
+   0.24869
+   0.48175
+   0.68455
+   0.84433
+   0.95106
+   0.99803
+   0.98229
+   0.90483
+   0.77051
+   0.58779
+   0.36812
+   0.12533
+  -0.12533
+  -0.36812
+  -0.58779
+  -0.77051
+  -0.90483
+  -0.98229
+  -0.99803
+  -0.95106
+  -0.84433
+  -0.68455
+  -0.48175
+  -0.24869
+  -0.00000
+   0.24869
+   0.48175
+   0.68455
+   0.84433
+   0.95106
+   0.99803
+   0.98229
+   0.90483
+   0.77051
+   0.58779
+   0.36812
+   0.12533
+  -0.12533
+  -0.36812
+  -0.58779
+  -0.77051
+  -0.90483
+  -0.98229
+  -0.99803
+  -0.95106
+  -0.84433
+  -0.68455
+  -0.48175
+  -0.24869
+  -0.00000
+   0.24869
+   0.48175
+   0.68455
+   0.84433
+   0.95106
+   0.99803
+   0.98229
+   0.90483
+   0.77051
+   0.58779
+   0.36812
+   0.12533
+  -0.12533
+  -0.36812
+  -0.58779
+  -0.77051
+  -0.90483
+  -0.98229
+  -0.99803
+  -0.95106
+  -0.84433
+  -0.68455
+  -0.48175
+
+>> plot (t, y1,'b');
+>> plot (t, y1,'g');
+>> close
+>> figure(1); plot(t, y1);
+>> figure(2); plot(t, y2);
+>> subplot(1,2,1); %divides plot a 1x2 grid, access first element
+>> plot(t,y1);
+>> subplot(t,y2);
+error: subplot: invalid axes handle or RCN argument
+error: called from
+    subplot at line 164 column 7
+>> plot(t,y2);
+>> plot(t,y1);
+>> plot(t,y2);
+>> axis([0.5 1 -1 1])
+>> help axis
+'axis' is a function from the file C:\Users\robk\AppData\Roaming\OCTAVE~1.0\mingw64\share\octave\5.2.0\m\plot\appearance\axis.m
+
+
+ -- axis ()
+ -- axis ([X_LO X_HI])
+ -- axis ([X_LO X_HI Y_LO Y_HI])
+ -- axis ([X_LO X_HI Y_LO Y_HI Z_LO Z_HI])
+ -- axis ([X_LO X_HI Y_LO Y_HI Z_LO Z_HI C_LO C_HI])
+ -- axis (OPTION)
+ -- axis (OPTION1, OPTION2, ...)
+ -- axis (HAX, ...)
+ -- LIMITS = axis ()
+     Set axis limits and appearance.
+
+     The argument LIMITS should be a 2-, 4-, 6-, or 8-element vector.
+     The first and second elements specify the lower and upper limits
+     for the x-axis.  The third and fourth specify the limits for the
+     y-axis, the fifth and sixth specify the limits for the z-axis, and
+     the seventh and eighth specify the limits for the color axis.  The
+     special values -Inf and Inf may be used to indicate that the limit
+     should be automatically computed based on the data in the axes.
+
+     Without any arguments, 'axis' turns autoscaling on.
+
+     With one output argument, 'LIMITS = axis' returns the current axis
+     limits.
+
+     The vector argument specifying limits is optional, and additional
+     string arguments may be used to specify various axis properties.
+
+     The following options control the aspect ratio of the axes.
+
+     "square"
+          Force a square axis aspect ratio.
+
+     "equal"
+          Force x-axis unit distance to equal y-axis (and z-axis) unit
+          distance.
+
+     "normal"
+          Restore default aspect ratio.
+
+     The following options control the way axis limits are interpreted.
+
+     "auto"
+     "auto[xyz]"
+          Set the specified axes to have nice limits around the data or
+          all if no axes are specified.
+
+     "manual"
+          Fix the current axes limits.
+
+     "tight"
+          Fix axes to the limits of the data.
+
+     "image"
+          Equivalent to "tight" and "equal".
+
+     "vis3d"
+          Set aspect ratio modes to "manual" for rotation without
+          stretching.
+
+     The following options affect the appearance of tick marks.
+
+     "tic[xyz]"
+          Turn tick marks on for all axes, or turn them on for the
+          specified axes and off for the remainder.
+
+     "label[xyz]"
+          Turn tick labels on for all axes, or turn them on for the
+          specified axes and off for the remainder.
+
+     "nolabel"
+          Turn tick labels off for all axes.
+
+     Note: If there are no tick marks for an axes then there can be no
+     labels.
+
+     The following options affect the direction of increasing values on
+     the axes.
+
+     "xy"
+          Default y-axis, larger values are near the top.
+
+     "ij"
+          Reverse y-axis, smaller values are near the top.
+
+     The following options affects the visibility of the axes.
+
+     "on"
+          Make the axes visible.
+
+     "off"
+          Hide the axes.
+
+     If the first argument HAX is an axes handle, then operate on this
+     axes rather than the current axes returned by 'gca'.
+
+     Example 1: set X/Y limits and force a square aspect ratio
+
+          axis ([1, 2, 3, 4], "square");
+
+     Example 2: enable tick marks on all axes, enable tick mark labels
+     only on the y-axis
+
+          axis ("tic", "labely");
+
+     See also: xlim, ylim, zlim, caxis, daspect, pbaspect, box, grid.
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at https://www.octave.org and via the help@octave.org
+mailing list.
+>> clf %clears figure
+>> A = magic(5)
+A =
+
+   17   24    1    8   15
+   23    5    7   14   16
+    4    6   13   20   22
+   10   12   19   21    3
+   11   18   25    2    9
+
+>> imagesc(A)
+>> imagesc(A), colorbar, colormap gray
+>> imagesc(A)
+>> figure(1); imagesc(A)
+>> A(4,5)
+ans =  3
+>> imagesc(magic(15))
+>>
+
+
+>> v = zeros(10,1)
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+>> v
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+>> for i=1:10, v(i) = 2^i;
+end
+>>
+>> v
+v =
+
+      2
+      4
+      8
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+
+>> indices=1:10;
+>> indices
+indices =
+
+    1    2    3    4    5    6    7    8    9   10
+
+>> for i=indices, disp(i); end;
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+>> v
+v =
+
+      2
+      4
+      8
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+
+>> i = 1;
+>> while i <= 5, v(i)=100; i=i+1;
+end
+>> v
+v =
+
+    100
+    100
+    100
+    100
+    100
+     64
+    128
+    256
+    512
+   1024
+
+>> i=1;
+>> while true, v(i)=999;
+     i=i+1;
+     if i == 6,
+        break;
+        end;
+     end;
+>> v
+v =
+
+    999
+    999
+    999
+    999
+    999
+     64
+    128
+    256
+    512
+   1024
+
+>>
+
+
+>> i=1;
+>> while true, v(i)=999;
+     i=i+1;
+     if i == 6,
+        break;
+        end;
+     end;
+>> v
+v =
+
+    999
+    999
+    999
+    999
+    999
+     64
+    128
+    256
+    512
+   1024
+
+>>
+>>
+>>
+>>
+>> v(1)
+ans =  999
+>> v(1)=2;
+>> if v(1)==1,
+     disp('The value is one');
+   elseif v(1) ==2,
+      disp('The value is two');
+   else
+      disp('The value is neither one nor two.');
+  end;
+The value is two

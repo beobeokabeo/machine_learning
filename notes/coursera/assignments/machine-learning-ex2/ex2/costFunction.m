@@ -21,10 +21,13 @@ grad = zeros(size(theta));
 %
 
 
+h_of_x = sigmoid(X * theta);
 
+J =  sum (-y .* log (h_of_x) - (1 - y) .* log(1 - h_of_x) ) / m;
+disp('J='); disp(J);
 
-
-
+grad =  (X' * (h_of_x - y)) / m;
+disp('gradient: '); disp(grad);
 
 
 % =============================================================

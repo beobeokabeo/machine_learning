@@ -1,0 +1,78 @@
+# Created by Octave 5.2.0, Tue Jul 21 01:53:36 2020 GMT <unknown@DESKTOP-OL35EQE>
+# name: A
+# type: matrix
+# rows: 3
+# columns: 2
+ 1 2
+ 3 4
+ 5 6
+
+
+# name: B
+# type: matrix
+# rows: 3
+# columns: 2
+ 11 12
+ 13 14
+ 15 16
+
+
+# name: a
+# type: matrix
+# rows: 1
+# columns: 4
+ 1 15 2 0.5
+
+
+# name: ans
+# type: scalar
+18.5
+
+
+# name: c
+# type: lazy_index
+# name: index_value
+# type: matrix
+# rows: 4
+# columns: 1
+ 1
+ 1
+ 2
+ 2
+
+
+
+
+# name: ind
+# type: scalar
+2
+
+
+# name: r
+# type: lazy_index
+# name: index_value
+# type: matrix
+# rows: 4
+# columns: 1
+ 2
+ 3
+ 2
+ 3
+
+
+
+
+# name: v
+# type: matrix
+# rows: 3
+# columns: 1
+ 2
+ 3
+ 4
+
+
+# name: val
+# type: scalar
+15
+
+
