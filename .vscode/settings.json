@@ -2,5 +2,6 @@
     "markdownlint.config": {
         "MD032": false,
         "MD013": false
-    }
+    },
+    "python.pythonPath": "C:\\Users\\robk\\.conda\\envs\\tracked-tf-gpu\\python.exe"
 }

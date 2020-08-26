@@ -5,7 +5,7 @@
 ---
 
 - Combine
-- K random nearest trees for clustering, classifying and looking up of similar historical matches/data
+- LSTM, K random nearest trees for clustering, classifying and looking up of similar historical matches/data
 - with random forest decision trees making decisions based on outputs of LSTM, neural networks, classification
 - automating data acquisition, continuous labeling, and regression
 - auto generation of trading strategy and risk management
@@ -21,7 +21,7 @@
 
 - a. Combine price + volume
   - normalize price percentage movement by ATR - average true range gives more relative movement to each currency
-  - volume is really important
+  - volume is really important // 
 
 - b. Ex hypothesis:
   - What is the ATR change in price in the first 5 minutes,
